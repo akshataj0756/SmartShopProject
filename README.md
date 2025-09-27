@@ -44,7 +44,7 @@ It follows Object-Oriented Design principles, includes input validation, excepti
  
 • Contributors 
  
-1)	Akshata Jadhav 
+1)	Akshata Jadhav (Team Leader) 
 2)	Rohan Jagdale 
 3)	Dattatray Lamkane 
 4)	Vaibhav Kamble 
