@@ -1,4 +1,4 @@
-package smart_shop.ProductManager.com;
+package com.smartshop.productmanager;
 
 import java.sql.*;
 
@@ -6,10 +6,10 @@ public class ProductViewer {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/ecommerce_db";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "Pass@123";
+    private static final String DB_PASSWORD = "root";
 
     public static void viewAllProducts() {
-        String query = "SELECT product_id, name, price, quantity FROM products";
+        String query = "SELECT product_id, name, price, quantity FROM product";
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
              Statement stmt = conn.createStatement();

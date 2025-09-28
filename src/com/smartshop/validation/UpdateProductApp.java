@@ -1,4 +1,4 @@
-package validation;
+package com.smartshop.validation;
 
 import java.sql.*;
 import java.util.Scanner;

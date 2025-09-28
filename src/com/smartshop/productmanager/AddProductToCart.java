@@ -1,4 +1,5 @@
-package smart_shop.ProductManager.com;
+package com.smartshop.productmanager;
+
 
 import java.sql.*;
 import java.util.Scanner;
@@ -7,7 +8,7 @@ public class AddProductToCart {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/ecommerce_db";
     private static final String DB_USER = "root";     
-    private static final String DB_PASSWORD = "Pass@123"; 
+    private static final String DB_PASSWORD = "root"; 
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -39,9 +40,9 @@ public class AddProductToCart {
     }
 
     public static void addToCart(int productId, int quantity) {
-        String selectQuery = "SELECT name, quantity FROM products WHERE product_id = ?";
-        String insertPurchaseQuery = "INSERT INTO purchases (product_id, quantity, purchase_date) VALUES (?, ?, NOW())";
-        String updateProductQuery = "UPDATE products SET quantity = quantity - ? WHERE product_id = ?";
+        String selectQuery = "SELECT name, quantity FROM product WHERE product_id = ?";
+        String insertPurchaseQuery = "INSERT INTO purchase (product_id, quantity, purchase_date) VALUES (?, ?, NOW())";
+        String updateProductQuery = "UPDATE product SET quantity = quantity - ? WHERE product_id = ?";
 
         try (
             Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);

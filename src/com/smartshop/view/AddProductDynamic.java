@@ -1,4 +1,4 @@
-package com.smart.shop.project;
+package com.smartshop.view;
 
 import java.sql.*;
 import java.util.Scanner;
@@ -7,8 +7,8 @@ public class AddProductDynamic {
 	
 	public static void main(String[] args) {
 	        String url = "jdbc:mysql://localhost:3306/ecommerce_db";
-	        String username = "root";  // your MySQL username
-	        String password = "root";  // your MySQL password
+	        String username = "root";  // MySQL username
+	        String password = "root";  // MySQL password
 	        
 	        
 	     // Scanner object to take input from user
@@ -19,7 +19,7 @@ public class AddProductDynamic {
 	            Class.forName("com.mysql.cj.jdbc.Driver");
 	            
 	             // Establish connection with database
-	            Connection conn = DriverManager.getConnection(url, username, password);
+	            Connection con = DriverManager.getConnection(url, username, password);
 	            
 	            boolean addMore = true;
 	            
@@ -42,7 +42,7 @@ public class AddProductDynamic {
 	                sc.nextLine(); 
 
 	                String sql = "INSERT INTO product (product_id, name, description, price, quantity) VALUES (?, ?, ?, ?, ?)";
-	                PreparedStatement pst = conn.prepareStatement(sql);
+	                PreparedStatement pst = con.prepareStatement(sql);
 	                pst.setInt(1, id);
 	                pst.setString(2, name);
 	                pst.setString(3, description);
@@ -60,7 +60,7 @@ public class AddProductDynamic {
 	                pst.close();
 	            }
 
-	            conn.close();
+	            con.close();
 	            System.out.println("All products added. Program ended.");
 	        } catch (Exception e) {
 	            e.printStackTrace();

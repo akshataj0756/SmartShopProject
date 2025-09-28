@@ -1,4 +1,4 @@
-package smartshop;
+package com.smartshop.admin;
 
 import java.util.Scanner;
 
@@ -27,11 +27,12 @@ public class SmartShopApp {
                     adminService.viewRegisteredUsers();
                     break;
                 case 3:
-                    System.out.println("Exiting... Goodbye!");
+                    System.out.println("Exiting the code.");
                     System.exit(0);
                 default:
                     System.out.println("Invalid choice!");
             }
+            sc.close();
         }
     }
 }

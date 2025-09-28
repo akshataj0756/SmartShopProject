@@ -1,4 +1,4 @@
-package smartshop;
+package com.smartshop.admin;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
