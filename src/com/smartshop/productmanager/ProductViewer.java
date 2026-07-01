@@ -15,7 +15,7 @@ public class ProductViewer {
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
 
-            System.out.println("\n📦 Available Products:");
+            System.out.println("\n Available Products:");
             System.out.println("-------------------------------------------------");
             System.out.printf("%-10s %-25s %-10s %-10s%n", "ID", "Name", "Price", "Stock");
             System.out.println("-------------------------------------------------");
@@ -29,7 +29,7 @@ public class ProductViewer {
             }
 
         } catch (SQLException e) {
-            System.out.println("⚠️ Database Error: " + e.getMessage());
+            System.out.println("Database Error: " + e.getMessage());
         }
     }
 }
