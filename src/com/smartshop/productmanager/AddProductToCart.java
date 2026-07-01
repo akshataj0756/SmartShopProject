@@ -26,13 +26,13 @@ public class AddProductToCart {
 
             addToCart(productId, quantity);
 
-            System.out.print("\n🔁 Do you want to continue shopping? (yes/no): ");
+            System.out.print("\n Do you want to continue shopping? (yes/no): ");
             scanner.nextLine(); // consume leftover newline
             String answer = scanner.nextLine().trim().toLowerCase();
 
             if (!answer.equals("yes") && !answer.equals("y")) {
                 continueShopping = false;
-                System.out.println("\n🛒 Thank you for shopping with us!");
+                System.out.println("\n Thank you for shopping with us!");
             }
         }
 
@@ -55,7 +55,7 @@ public class AddProductToCart {
             ResultSet rs = selectStmt.executeQuery();
 
             if (!rs.next()) {
-                System.out.println("❌ Product with ID " + productId + " does not exist.");
+                System.out.println(" Product with ID " + productId + " does not exist.");
                 return;
             }
 
@@ -65,7 +65,7 @@ public class AddProductToCart {
             // Step 2: Validate stock
             System.out.println("\nChecking stock availability...");
             if (quantity > availableStock) {
-                System.out.println("❌ Only " + availableStock + " units of '" + productName + "' available.");
+                System.out.println(" Only " + availableStock + " units of '" + productName + "' available.");
                 return;
             }
 
@@ -80,10 +80,10 @@ public class AddProductToCart {
             updateStmt.executeUpdate();
 
             System.out.println("Adding product to your cart and saving purchase in database...");
-            System.out.println("✅ Product added successfully!");
+            System.out.println(" Product added successfully!");
 
         } catch (SQLException e) {
-            System.out.println("⚠️ Database Error: " + e.getMessage());
+            System.out.println(" Database Error: " + e.getMessage());
         }
     }
 }
