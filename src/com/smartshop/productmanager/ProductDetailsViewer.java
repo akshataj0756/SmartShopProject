@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class ProductDetailsViewer {
 
   private static final String DB_URL = "jdbc:mysql://localhost:3306/ecommerce_db";
-  private static final String DB_USER = "root";      // 🔁 Replace with your DB username
-  private static final String DB_PASSWORD ="root";  // 🔁 Replace with your DB password
+  private static final String DB_USER = "root";    
+  private static final String DB_PASSWORD ="root";  
 
   public static void main(String[] args) {
       Scanner scanner = new Scanner(System.in);
@@ -55,11 +55,11 @@ public class ProductDetailsViewer {
               System.out.println("Price              : " + price);
               System.out.println("Available Quantity : " + qty);
           } else {
-              System.out.println("\n❌ Product with ID " + productId + " not found.");
+              System.out.println("\n Product with ID " + productId + " not found.");
           }
 
       } catch (SQLException e) {
-          System.out.println("⚠️ Database error: " + e.getMessage());
+          System.out.println("Database error: " + e.getMessage());
       }
   }
 }
